@@ -1,3 +1,11 @@
+/** Joseline Ortiz 15039
+    Michelle Morales 15322
+    
+    GUI del programa de la hoja de trabajo no. 8
+**/
+
+
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -61,37 +69,7 @@ public class MainGUI extends JFrame {
 		JMenu mnInformacion = new JMenu("Informacion");
 		menuBar.add(mnInformacion);
 		
-/**		
-                JMenuItem mntmAyuda = new JMenuItem("Ayuda");
-		mntmAyuda.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "1. Para cargar el archivo de pacientes de click en el boton 'Cargar Fichas'. "
-						+ "\n2. Seleccione la implementacion de la PriorityQueue que desea utilizar. Puede elegir entre la del JCF \no una implementaci�n basada en Vector. "
-						+ "\n3. Para mostrar el listado de pacientes en orden de prioridad de click en el boton 'Mostrar prioridad de atencion'"
-						+ "\n4. Se le proporcionan dos ejemplos de archivos de texto: 'pacientes.txt' y 'pacientes2.txt' \nNote que la forma correcta de agregar pacientes al archivo es mediante la separacion de coma y un espacio."
-						, "Como utilizar el programa.", JOptionPane.INFORMATION_MESSAGE);
-			}
-		});
-		mnInformacion.add(mntmAyuda);
-               
-		JMenuItem mntmAbout = new JMenuItem("About");
-		mntmAbout.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "2016. Gabriel Brolo, Jose Luis Mendez. \nAlgoritmos y Estructuras de datos. UVG."
-						, "Sobre 'El Hospital de Mancos'", JOptionPane.INFORMATION_MESSAGE);
-			}
-		});
-		mnInformacion.add(mntmAbout);
-		
-		JMenuItem mntmGit = new JMenuItem("Git");
-		mntmGit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "https://github.com/gbrolo/Hospital-UVG.git"
-						, "Git", JOptionPane.INFORMATION_MESSAGE);
-			}
-		});
-		mnInformacion.add(mntmGit);
-**/
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -115,7 +93,7 @@ public class MainGUI extends JFrame {
 				/* Abrir archivo */
 				JFileChooser fc = new JFileChooser();
 				fc.setCurrentDirectory(new java.io.File("./src"));
-				fc.setDialogTitle("Seleccione su archivo");
+				fc.setDialogTitle("Seleccione un archivo");
 				fc.setFileFilter(new FileNameExtensionFilter("Text files (.txt)", "txt"));
 				if(fc.showOpenDialog(btnCargarFichas) == JFileChooser.APPROVE_OPTION){
 					try{
@@ -139,7 +117,7 @@ public class MainGUI extends JFrame {
 							pacienteList.add(ptemp);
 						}
 						
-						JOptionPane.showMessageDialog(null, "Se ha cargado el archivo con las fichas de los pacientes.");
+						JOptionPane.showMessageDialog(null, "Se ha cargado un archivo con las fichas de los pacientes.");
 						
 					} catch(Exception j){
 						j.printStackTrace();
